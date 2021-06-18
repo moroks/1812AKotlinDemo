@@ -1,16 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tool_version
 
     defaultConfig {
         applicationId "com.huluobo.lc.a1812akotlindemo"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
         versionCode 1
         versionName "1.0"
 
@@ -42,4 +43,12 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    // Anko SQLite
+    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
+    implementation('com.roughike:bottom-bar:2.3.1') {
+        exclude module: 'design'
+    }
 }
